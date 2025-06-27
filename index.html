@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish Auto Spa Pitesti - Detailing Auto Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="font-[Montserrat] overflow-x-hidden">
+    <!-- Particle Toggle Button -->
+    <button id="particle-toggle" aria-label="Toggle Particle Animation" 
+            class="fixed top-20 right-4 z-50 bg-white/80 hover:bg-white text-red-600 font-semibold px-3 py-1 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+        <i class="fas fa-magic mr-1"></i> Particles: On
+    </button>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="https://polishautospa.ro/wp-content/uploads/2024/02/Untitled-design-2.jpg" 
+                         alt="Polish Auto Spa Pitesti" 
+                         class="h-12 w-auto">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-medium text-red-600">Acasă</a>
+                    <a href="services.html" class="font-medium hover:text-red-600 transition-colors">Servicii</a>
+                    <a href="gallery.html" class="font-medium hover:text-red-600 transition-colors">Galerie</a>
+                    <a href="booking.html" class="font-medium hover:text-red-600 transition-colors">Programare</a>
+                    <a href="about.html" class="font-medium hover:text-red-600 transition-colors">Despre Noi</a>
+                </div>
+                <button class="md:hidden text-gray-700 hover:text-red-600 transition-colors" id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 bg-black/50 z-40 hidden transition-opacity duration-300" id="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Menu Panel -->
+    <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50" id="mobile-menu">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <div class="text-xl font-bold">Meniu</div>
+                <button class="text-gray-700 hover:text-red-600 transition-colors" id="mobile-menu-close">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <a href="index.html" class="block py-2 text-red-600 font-medium">Acasă</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Servicii</a>
+                <a href="gallery.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Galerie</a>
+                <a href="booking.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Programare</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Despre Noi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center hero-section overflow-hidden" data-aos="fade-up" data-aos-duration="1500">
+        <div class="absolute inset-0 z-0" data-aos="zoom-in" data-aos-duration="2000">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="https://ammonyc.com/cdn/shop/videos/c/vp/2dfadb9552ad416f91d17372576a15e6/2dfadb9552ad416f91d17372576a15e6.HD-720p-4.5Mbps-15165019.mp4?v=0" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 hero-content" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-shadow typewriter">Polish Auto Spa Pitești</h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow">Aducem strălucirea înapoi mașinii dumneavoastră</p>
+            <a href="booking.html" 
+               class="inline-block bg-red-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-red-700 transition-colors btn-primary floating gpu-accelerated float-shadow shimmer">
+                Programează-te Acum
+            </a>
+        </div>
+    </section>
+
+    <!-- Cu ce ne ocupam -->
+    <section class="py-20 bg-white" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 scroll-animate">Cu ce ne ocupăm</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicii complete -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden service-card img-hover-zoom gpu-accelerated shimmer">
+                    <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" 
+                         alt="Servicii complete" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Servicii Complete</h3>
+                        <p class="text-gray-600">Oferim servicii complete de detailing auto pentru toate tipurile de vehicule.</p>
+                    </div>
+                </div>
+
+                <!-- Detailing auto -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden service-card img-hover-zoom gpu-accelerated shimmer">
+                    <img src="https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg" 
+                         alt="Detailing auto" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Detailing Auto</h3>
+                        <p class="text-gray-600">Detailing profesional pentru exterior și interior cu cele mai bune produse.</p>
+                    </div>
+                </div>
+
+                <!-- Polish Auto Spa -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden service-card img-hover-zoom gpu-accelerated shimmer">
+                    <img src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg" 
+                         alt="Polish Auto Spa Pitesti" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Polish Auto Spa Pitești</h3>
+                        <p class="text-gray-600">Echipa noastră profesionistă din Pitești vă oferă servicii de cea mai înaltă calitate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- De ce să ne alegeți -->
+    <section class="py-20 bg-gray-50" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 scroll-animate">De ce să ne alegeți</h2>
+            <div class="max-w-4xl mx-auto text-center mb-12 scroll-animate">
+                <p class="text-lg text-gray-700 leading-relaxed text-glow">
+                    Folosim cele mai bune produse de pe piață, ne asigurăm că fiecare detaliu al autovehiculului dumneavoastră este tratat cu cea mai mare grijă. Ne asigurăm că aducem strălucirea înapoi mașinii dumneavoastră.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <div class="text-center scroll-animate gpu-accelerated hover-pulse">
+                    <i class="fas fa-medal text-4xl text-red-600 mb-4 floating shimmer"></i>
+                    <h3 class="text-xl font-bold mb-2">Calitate Premium</h3>
+                    <p class="text-gray-600">Servicii de detailing de cea mai înaltă calitate</p>
+                </div>
+                <div class="text-center scroll-animate gpu-accelerated hover-pulse">
+                    <i class="fas fa-clock text-4xl text-red-600 mb-4 floating shimmer"></i>
+                    <h3 class="text-xl font-bold mb-2">Eficiență</h3>
+                    <p class="text-gray-600">Timp de execuție rapid fără compromisuri</p>
+                </div>
+                <div class="text-center scroll-animate gpu-accelerated hover-pulse">
+                    <i class="fas fa-tools text-4xl text-red-600 mb-4 floating shimmer"></i>
+                    <h3 class="text-xl font-bold mb-2">Echipă Expertă</h3>
+                    <p class="text-gray-600">Profesioniști cu ani de experiență</p>
+                </div>
+                <div class="text-center scroll-animate gpu-accelerated hover-pulse">
+                    <i class="fas fa-smile text-4xl text-red-600 mb-4 floating shimmer"></i>
+                    <h3 class="text-xl font-bold mb-2">Satisfacție</h3>
+                    <p class="text-gray-600">Garanție 100% pentru satisfacția clientului</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Polish Auto Spa Pitești</h3>
+                    <p class="text-gray-400">Servicii profesionale de detailing auto care aduc mașina dumneavoastră înapoi la viață.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Resurse</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Termeni și condiții</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politica de confidențialitate</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politica cookie-uri</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Garanție</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +40 737 316 400</li>
+                        <li><i class="fas fa-phone mr-2"></i> +40 747 316 400</li>
+                        <li><i class="fas fa-envelope mr-2"></i> contact@polishautospa.ro</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Strada Basarabia nr 75D, Pitești</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Ne găsiți și...</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all hover:scale-125 duration-300"><i class="fab fa-facebook text-2xl shimmer"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all hover:scale-125 duration-300"><i class="fab fa-instagram text-2xl shimmer"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all hover:scale-125 duration-300"><i class="fab fa-tiktok text-2xl shimmer"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all hover:scale-125 duration-300"><i class="fab fa-youtube text-2xl shimmer"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400" data-aos="fade-up" data-aos-delay="400">
+                <p>&copy; 2024 Polish Auto Spa Pitești. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
