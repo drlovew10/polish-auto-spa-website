@@ -1,0 +1,615 @@
+/* Custom styles for Polish Auto Spa Pitesti - Enhanced with Animations */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom color scheme - Red, White, Black */
+:root {
+    --primary-red: #dc2626;
+    --primary-red-hover: #b91c1c;
+    --text-black: #1f2937;
+    --text-gray: #6b7280;
+    --bg-white: #ffffff;
+    --bg-gray: #f9fafb;
+}
+
+/* Global animations */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Enhanced animations */
+@keyframes hoverPulse {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.03) translateY(-5px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes floatShadow {
+    0% { 
+        transform: translateY(0);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    50% { 
+        transform: translateY(-10px);
+        box-shadow: 0 25px 25px rgba(0,0,0,0.1);
+    }
+    100% { 
+        transform: translateY(0);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* Animation utility classes */
+.hover-pulse {
+    animation: hoverPulse 2s infinite;
+}
+
+.float-shadow {
+    animation: floatShadow 3s ease-in-out infinite;
+}
+
+.shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s linear infinite;
+}
+
+/* Particle toggle button styles */
+#particle-toggle {
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#particle-toggle:hover {
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+}
+
+#particle-toggle:active {
+    transform: scale(0.95) translateY(-1px);
+}
+
+/* Hero section animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--primary-red);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--primary-red), 0 0 30px var(--primary-red);
+    }
+}
+
+/* Navigation animations */
+nav {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-red);
+    transition: left 0.3s ease;
+}
+
+nav a:hover::before {
+    left: 0;
+}
+
+/* Logo animation */
+nav img {
+    transition: transform 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Hero section styling */
+.hero-content h1 {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-content p {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-content a {
+    animation: fadeInUp 1s ease-out 0.9s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-content a:hover::before {
+    left: 100%;
+}
+
+/* Service cards animations */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+}
+
+.service-card img {
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Button animations */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+}
+
+/* Icon animations */
+.fas, .fab {
+    transition: all 0.3s ease;
+}
+
+.fas:hover, .fab:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: var(--primary-red);
+}
+
+/* Mobile Menu Animations */
+#mobile-menu {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#mobile-menu a {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+#mobile-menu:not(.translate-x-full) a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#mobile-menu:not(.translate-x-full) a:nth-child(1) { transition-delay: 0.1s; }
+#mobile-menu:not(.translate-x-full) a:nth-child(2) { transition-delay: 0.2s; }
+#mobile-menu:not(.translate-x-full) a:nth-child(3) { transition-delay: 0.3s; }
+#mobile-menu:not(.translate-x-full) a:nth-child(4) { transition-delay: 0.4s; }
+#mobile-menu:not(.translate-x-full) a:nth-child(5) { transition-delay: 0.5s; }
+
+/* Form animations */
+.form-input {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.form-input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+}
+
+/* Gallery animations */
+.gallery-item {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--primary-red), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.gallery-item:hover::before {
+    opacity: 0.1;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.3);
+}
+
+/* Filter buttons animations */
+.filter-btn {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-red);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.filter-btn:hover::before,
+.filter-btn.active::before {
+    left: 0;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Package cards animations */
+.package-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.package-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, var(--primary-red), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: rotate 3s linear infinite;
+    z-index: -1;
+}
+
+.package-card:hover::after {
+    opacity: 0.1;
+}
+
+.package-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(220, 38, 38, 0.2);
+}
+
+.package-card.featured {
+    animation: pulse 2s infinite;
+}
+
+/* Contact info animations */
+.contact-info li {
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 30px;
+}
+
+.contact-info li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: var(--primary-red);
+    transform: translateY(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.contact-info li:hover::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+.contact-info li:hover {
+    transform: translateX(10px);
+    color: var(--primary-red);
+}
+
+/* Social media animations */
+.social-icon {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--primary-red);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.social-icon:hover::before {
+    width: 40px;
+    height: 40px;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.2);
+    color: white;
+}
+
+/* Scroll animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading animations */
+.loading-spinner {
+    animation: rotate 1s linear infinite;
+}
+
+/* Text animations */
+.text-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Hover effects for images */
+.img-hover-zoom {
+    overflow: hidden;
+    position: relative;
+}
+
+.img-hover-zoom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.img-hover-zoom:hover::before {
+    left: 100%;
+}
+
+.img-hover-zoom img {
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Custom scrollbar with animation */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-red-hover);
+    box-shadow: 0 0 10px var(--primary-red);
+}
+
+/* Floating animation for call-to-action */
+.floating {
+    animation: bounce 2s infinite;
+}
+
+/* Typewriter effect */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--primary-red);
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary-red); }
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+    .service-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .package-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .gallery-item:hover {
+        transform: scale(1.02);
+    }
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Entrance animations for page load */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+}
