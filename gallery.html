@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Polish Auto Spa Pitesti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="font-[Montserrat]">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="https://polishautospa.ro/wp-content/uploads/2024/02/Untitled-design-2.jpg" 
+                         alt="Polish Auto Spa Pitesti" 
+                         class="h-12 w-auto">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-medium hover:text-red-600 transition-colors">Acasă</a>
+                    <a href="services.html" class="font-medium hover:text-red-600 transition-colors">Servicii</a>
+                    <a href="gallery.html" class="font-medium text-red-600">Galerie</a>
+                    <a href="booking.html" class="font-medium hover:text-red-600 transition-colors">Programare</a>
+                    <a href="about.html" class="font-medium hover:text-red-600 transition-colors">Despre Noi</a>
+                </div>
+                <button class="md:hidden text-gray-700 hover:text-red-600 transition-colors" id="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="fixed inset-0 bg-black/50 z-40 hidden transition-opacity duration-300" id="mobile-menu-overlay"></div>
+        <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50" id="mobile-menu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="text-xl font-bold">Meniu</div>
+                    <button class="text-gray-700 hover:text-red-600 transition-colors" id="mobile-menu-close">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Acasă</a>
+                    <a href="services.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Servicii</a>
+                    <a href="gallery.html" class="block py-2 text-red-600 font-medium">Galerie</a>
+                    <a href="booking.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Programare</a>
+                    <a href="about.html" class="block py-2 text-gray-700 hover:text-red-600 transition-colors font-medium">Despre Noi</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero -->
+    <section class="pt-24 pb-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-6">Lucrările Noastre</h1>
+            <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto romanian-text">
+                Răsfoiește prin portofoliul nostru de proiecte finalizate și vezi calitatea serviciilor noastre de detailing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- Gallery Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="px-6 py-2 rounded-full filter-btn active" data-filter="all">Toate</button>
+                <button class="px-6 py-2 rounded-full filter-btn" data-filter="exterior">Exterior</button>
+                <button class="px-6 py-2 rounded-full filter-btn" data-filter="interior">Interior</button>
+                <button class="px-6 py-2 rounded-full filter-btn" data-filter="paint">Corecția Vopselei</button>
+            </div>
+
+            <!-- Gallery Images -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exterior 1 -->
+                <div class="gallery-item exterior" data-category="exterior">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg" 
+                             alt="Detailing Exterior" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">Detailing Exterior</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior 1 -->
+                <div class="gallery-item interior" data-category="interior">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg" 
+                             alt="Detailing Interior" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">Detailing Interior</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paint 1 -->
+                <div class="gallery-item paint" data-category="paint">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.pexels.com/photos/3778769/pexels-photo-3778769.jpeg" 
+                             alt="Corecția Vopselei" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">Corecția Vopselei</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exterior 2 -->
+                <div class="gallery-item exterior" data-category="exterior">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg" 
+                             alt="Detailing Exterior" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">Spălare Profesională</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior 2 -->
+                <div class="gallery-item interior" data-category="interior">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.pexels.com/photos/2365572/pexels-photo-2365572.jpeg" 
+                             alt="Detailing Interior" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">Curățare Interior</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paint 2 -->
+                <div class="gallery-item paint" data-category="paint">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg" 
+                             alt="Corecția Vopselei" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">Lustruire Profesională</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <img src="" alt="Imagine Galerie" class="max-h-[80vh] w-auto">
+            <button class="absolute top-4 right-4 text-white text-2xl" onclick="document.getElementById('lightbox').classList.add('hidden')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Before/After Showcase -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Înainte & După</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Before/After 1 -->
+                <div class="space-y-4">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3778769/pexels-photo-3778769.jpeg" 
+                             alt="Înainte de tratament" 
+                             class="w-full rounded-lg shadow-lg">
+                        <div class="absolute top-4 left-4 bg-black bg-opacity-75 text-white px-4 py-2 rounded-full">
+                            Înainte
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg" 
+                             alt="După tratament" 
+                             class="w-full rounded-lg shadow-lg">
+                        <div class="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-full">
+                            După
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Before/After 2 -->
+                <div class="space-y-4">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg" 
+                             alt="Înainte de tratament" 
+                             class="w-full rounded-lg shadow-lg">
+                        <div class="absolute top-4 left-4 bg-black bg-opacity-75 text-white px-4 py-2 rounded-full">
+                            Înainte
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg" 
+                             alt="După tratament" 
+                             class="w-full rounded-lg shadow-lg">
+                        <div class="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-full">
+                            După
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-red-600">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Gata să-ți transformi vehiculul?</h2>
+            <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto romanian-text">
+                Programează-ți întâlnirea astăzi și experimentează serviciile noastre premium de detailing.
+            </p>
+            <a href="booking.html" class="inline-block bg-white text-red-600 px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors">
+                Programează-te Acum
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Polish Auto Spa Pitești</h3>
+                    <p class="text-gray-400">Servicii profesionale de detailing auto care aduc mașina dumneavoastră înapoi la viață.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Resurse</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Termeni și condiții</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politica de confidențialitate</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politica cookie-uri</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Garanție</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 contact-info">
+                        <li><i class="fas fa-phone mr-2"></i> +40 737 316 400</li>
+                        <li><i class="fas fa-phone mr-2"></i> +40 747 316 400</li>
+                        <li><i class="fas fa-envelope mr-2"></i> contact@polishautospa.ro</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Strada Basarabia nr 75D, Pitești</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Ne găsiți și...</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors social-icon"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors social-icon"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors social-icon"><i class="fab fa-tiktok text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors social-icon"><i class="fab fa-youtube text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Polish Auto Spa Pitești. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
